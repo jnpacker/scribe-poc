@@ -1,0 +1,13 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: dokuwiki
+  namespace: dokuwiki
+spec:
+  rsync:
+    serviceType: LoadBalancer
+    copyMethod: Snapshot
+    capacity: 2Gi
+    accessModes: [ReadWriteOnce]
+    destinationPVC: dokuwiki

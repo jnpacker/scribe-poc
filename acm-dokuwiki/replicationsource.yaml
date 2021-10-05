@@ -1,0 +1,14 @@
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationSource
+metadata:
+  name: pvc-source
+  namespace: dokuwiki
+spec:
+  sourcePVC: dokuwiki
+  trigger:
+    schedule: "*/12 * * * *"
+  rsync:
+    sshKeys: volsync-rsync-dest-src-dokuwiki
+    address: XXX.XXX.XXX.XXX
+    copyMethod: Snapshot
